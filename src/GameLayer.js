@@ -11,7 +11,7 @@ var GameLayer = cc.LayerColor.extend({
 		this.pig.scheduleUpdate();
 		
 		this.background = new Background();
-		this.background.setPosition( new cc.Point( 5,0) );
+		this.background.setPosition( new cc.Point( 0,0) );
 		this.addChild( this.background );
 		this.background.scheduleUpdate();
 		
