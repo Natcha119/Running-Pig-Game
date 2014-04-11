@@ -1,7 +1,7 @@
 var Pig = cc.Sprite.extend({
     ctor: function() {
         this._super();
-        this.initWithFile( 'images/kf2.png' );
+        this.initWithFile( 'images/pig2.png' );
 		this.direction = Pig.DIR.STILL;
 		this.nextDirection = Pig.DIR.STILL;
 		
@@ -20,14 +20,14 @@ var Pig = cc.Sprite.extend({
 	update: function( dt ) {
 		this.direction = this.nextDirection;
 		switch ( this.direction ) {
-		case Pig.DIR.LEFT:
-			if( this.x > 20 )
-            this.x -= Pig.MOVE_STEP;
-            break;
-        case Pig.DIR.RIGHT:
-			if( this.x < 780 )
-            this.x += Pig.MOVE_STEP;
-            break;
+			case Pig.DIR.LEFT:
+				if( this.x > 20 )
+					this.x -= Pig.MOVE_STEP;
+				break;
+			case Pig.DIR.RIGHT:
+				if( this.x < 780 )
+					this.x += Pig.MOVE_STEP;
+				break;
         }
 		 this.updatePosition();
 	},

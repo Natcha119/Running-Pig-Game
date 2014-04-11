@@ -15,6 +15,8 @@
 			'src/resource.js',
 			'src/Pig.js',
 			'src/Background.js',
+			'src/Potato.js',
+			'src/Meat.js',
             'src/GameLayer.js' ,    //add your own files in order here
         ]
     };
