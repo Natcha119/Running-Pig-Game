@@ -1,3 +1,4 @@
+var score = 0;
 var GameLayer = cc.LayerColor.extend({
     init: function() {
         this._super( new cc.Color4B( 127, 127, 127, 255 ) );
@@ -22,23 +23,33 @@ var GameLayer = cc.LayerColor.extend({
 
 		this.meat = new Meat();
 		
-		this.meat.setAnchorPoint( cc.p( 0, 0 ) );
+		//this.meat.setAnchorPoint( cc.p( 0, 0 ) );
 		//console.log( JSON.stringify( this.meat.getPosition() ) )
 		//this.meat.setPosition( new ccPoint( this.meat.getMeat().randomX(), 800 ) );
-		this.addChild( this.meat );
-		this.meat.scheduleUpdate();
+		//this.addChild( this.meat );
+		//this.meat.scheduleUpdate();
+		
+		this.slide = new Slide();
+		this.addChild(this.slide);
+		this.slide.scheduleUpdate();
 		
 		this.scoreLabel = cc.LabelTTF.create( '0', 'Arial', 40 );
 		this.scoreLabel.setPosition( new cc.Point( 750, 550 ) );
 		this.addChild( this.scoreLabel );
-		console.log( JSON.stringify( this.meat.getPosition() ) )
+		
+		this.scheduleUpdate();
+		
         return true;
 		
     },
 	
-	update : function( ){
-		if(this.potato.closeTo( this.pig )){
-			this.potato.setPosition(new cc.Point(this.potato.randomX(),800));
+	update : function( dt ){
+		if( this.meat.isHitted( this.pig ) ){
+			score += 1;
+			console.log(score);
+			this.scoreLabel.setString( score );
+			//score will ++ na ja
+			//this.meat.setPosition(new cc.Point(this.potato.randomX(),800));
 		}
 	},
 	
