@@ -1,18 +1,16 @@
+var score = 0;
 var Slide = cc.Node.extend({
-		ctor: function() {
+		ctor: function( gameLayer ) {
 			this._super();
 	
-			this.meatGroup = [ new Egg(), new Chicken(), new Beef(), new Fish() ];	//all items
+			this.mm = null;
+	
+			this.gameLayer = gameLayer;
+	
+			//this.meatGroup = [ new Egg(), new Chicken(), new Beef(), new Fish() ];	//all items
 			this.meatShow = [];
 
-			//this.posX = [ 250, 470, 650, 700, 500 ];	
 			this.pickUpMeat();
-	},
-		
-	randomX : function(){
-		var i = Math.floor( Math.random() * 700 ) + 90;
-		//return this.posX[ i ];
-		return i;
 	},
 	
 	randomMeat : function(){
@@ -23,34 +21,28 @@ var Slide = cc.Node.extend({
 	pickUpMeat : function(){
 		this.schedule(function(){
 			var m = this.randomMeat();
-			//console.log(m);
 			if(m == 0){
-				var meat = new Egg( );
+				this.mm = new Egg( this.gameLayer.pig );
 			}
 			else if(m == 1){
-				var meat = new Chicken();
+				this.mm = new Chicken( this.gameLayer.pig );
 			}
 			else if(m == 2){
-				var meat = new Beef();
+				this.mm = new Beef( this.gameLayer.pig );
 			}
 			else if(m == 3){
-				var meat = new Fish();
+				this.mm = new Fish( this.gameLayer.pig );
 			}
-			meat.setPosition(new cc.Point(this.randomX(),800));
-			this.addChild( meat );
-			this.meatShow.push( meat );
-			meat.scheduleUpdate();
+			this.mm.setNewPosition();
+			this.gameLayer.addChild( this.mm );
+			this.meatShow.push( this.mm );
+			this.mm.scheduleUpdate();
 		}, 2);//thing to add to meatShow
 		
 	},
 	
 	update: function( dt ) {
-		//var count = 0;
-		//console.log(this.meatShow.length);
-		//for( var i = 0; i < this.meatShow.length ; i++ ){
-			//this.meatShow[ i ].setPosition( new cc.Point( 100, 500 ));
-		//}
-	},
-	
+		
+	},	
 	
 });

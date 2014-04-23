@@ -1,7 +1,9 @@
 var Fish = Meat.extend({
-		ctor: function( ) {
-			this._super( );
+		ctor: function( pig ) {
+			this._super( pig );
 			this.initWithFile( 'images/m5.png' );
 		},
-			
+		
+	
+		
 });

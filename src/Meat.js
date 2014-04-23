@@ -1,26 +1,34 @@
 var Meat = cc.Sprite.extend( {
-		ctor: function( ) {
+		ctor: function( _pig ) {
 			this._super( );
+			this.pig = _pig;
 		},
 		
 		update : function( ) {
 			var pos = this.getPosition();
 			
+			if( this.pig && this.isHit( this.pig ) ) {
+				this.removeFromParent( true );
+				
+			}
 			if( pos.y < 0 ) {
-				this.removeFromParent( true);
+				this.removeFromParent( true );
 			} else {
 				this.setPosition( pos.x, pos.y - 4);
 			}
 		},
 		
-		isHitted : function( obj ) {
-			var pigPos = obj.getPosition();
-			var meatPos = this.getPosition();
-			
-			return ( ( Math.abs( meatPos.x - pigPos.x ) <= 50) &&
-		 ( Math.abs( meatPos.y - pigPos.y ) <= 50 ) );
-			//return (Math.abs( pigPos.x - meatPos.x ) <= 10) && (Math.abs( pigPos.y- meatPos.y ) <= 10);
-			//return true;
+		setNewPosition: function(){
+			this.setPosition(new cc.Point(this.randomX(),800));
 		},
+		
+		randomX : function(){
+			var i = Math.floor( Math.random() * 700 ) + 90;
+			return i;
+		},
+		
+		isHit: function( obj ) {
+			return cc.rectIntersectsRect( obj.getBoundingBoxToWorld(), this.getBoundingBoxToWorld() );
+		 },
 			
 } );

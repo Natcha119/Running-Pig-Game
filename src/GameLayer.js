@@ -16,20 +16,7 @@ var GameLayer = cc.LayerColor.extend({
 		this.addChild( this.background );
 		this.background.scheduleUpdate();
 		
-		//this.potato = new Potato();
-		//this.potato.setPosition( new cc.Point( this.potato.randomX(), 800 ));
-		//this.addChild( this.potato );
-		//this.potato.scheduleUpdate();
-
-		this.meat = new Meat();
-		
-		//this.meat.setAnchorPoint( cc.p( 0, 0 ) );
-		//console.log( JSON.stringify( this.meat.getPosition() ) )
-		//this.meat.setPosition( new ccPoint( this.meat.getMeat().randomX(), 800 ) );
-		//this.addChild( this.meat );
-		//this.meat.scheduleUpdate();
-		
-		this.slide = new Slide();
+		this.slide = new Slide(this);
 		this.addChild(this.slide);
 		this.slide.scheduleUpdate();
 		
@@ -44,13 +31,7 @@ var GameLayer = cc.LayerColor.extend({
     },
 	
 	update : function( dt ){
-		if( this.meat.isHitted( this.pig ) ){
-			score += 1;
-			console.log(score);
-			this.scoreLabel.setString( score );
-			//score will ++ na ja
-			//this.meat.setPosition(new cc.Point(this.potato.randomX(),800));
-		}
+		
 	},
 	
 	onKeyDown: function( e ) {
