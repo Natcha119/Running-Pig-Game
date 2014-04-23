@@ -20,6 +20,11 @@
 			'src/Chicken.js',
 			'src/Beef.js',
 			'src/Fish.js',
+			'src/Veg.js',
+			'src/Potato.js',
+			'src/Beetroot.js',
+			'src/Radish.js',
+			'src/Eggplant.js',
 			'src/Slide.js',
             'src/GameLayer.js' ,    //add your own files in order here
         ]

@@ -7,6 +7,9 @@ var g_resources = [
 	{src: 'images/m4.jpg' },
 	{src: 'images/m5.jpg' },
 	{src: 'images/veg1.jpg' },
+	{src: 'images/veg2.jpg' },
+	{src: 'images/veg3.jpg' },
+	{src: 'images/veg4.jpg' },
 	
     //plist
  

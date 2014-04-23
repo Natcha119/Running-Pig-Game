@@ -3,40 +3,53 @@ var Slide = cc.Node.extend({
 		ctor: function( gameLayer ) {
 			this._super();
 	
-			this.mm = null;
+			this.food = null;
 	
 			this.gameLayer = gameLayer;
 	
 			//this.meatGroup = [ new Egg(), new Chicken(), new Beef(), new Fish() ];	//all items
-			this.meatShow = [];
+			this.foodShow = [];
 
-			this.pickUpMeat();
+			this.pickUpFood();
 	},
 	
-	randomMeat : function(){
-		var index = Math.floor( Math.random() * 4 );//for random meat
+	randomFood : function(){
+		var index = Math.floor( Math.random() * 8 );//for random meat
 		return index;
 	},
 	
-	pickUpMeat : function(){
+	pickUpFood : function(){
 		this.schedule(function(){
-			var m = this.randomMeat();
+			var m = this.randomFood();
 			if(m == 0){
-				this.mm = new Egg( this.gameLayer.pig );
+				this.food = new Egg( this.gameLayer.pig );
 			}
 			else if(m == 1){
-				this.mm = new Chicken( this.gameLayer.pig );
+				this.food = new Chicken( this.gameLayer.pig );
 			}
 			else if(m == 2){
-				this.mm = new Beef( this.gameLayer.pig );
+				this.food = new Beef( this.gameLayer.pig );
 			}
 			else if(m == 3){
-				this.mm = new Fish( this.gameLayer.pig );
+				this.food = new Fish( this.gameLayer.pig );
 			}
-			this.mm.setNewPosition();
-			this.gameLayer.addChild( this.mm );
-			this.meatShow.push( this.mm );
-			this.mm.scheduleUpdate();
+			else if(m == 4){
+				this.food = new Potato( this.gameLayer.pig );
+			}
+			else if(m == 5){
+				this.food = new Beetroot( this.gameLayer.pig );
+			}
+			else if(m == 6){
+				this.food = new Radish( this.gameLayer.pig );
+			}
+			else if(m == 7){
+				this.food = new Eggplant( this.gameLayer.pig );
+			}
+	
+			this.food.setNewPosition();
+			this.gameLayer.addChild( this.food );
+			this.foodShow.push( this.food );
+			this.food.scheduleUpdate();
 		}, 2);//thing to add to meatShow
 		
 	},

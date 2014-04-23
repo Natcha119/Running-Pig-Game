@@ -3,6 +3,5 @@ var Beef = Meat.extend({
 			this._super( pig );
 			this.initWithFile( 'images/m4.png' );
 		},
-
 		
 });

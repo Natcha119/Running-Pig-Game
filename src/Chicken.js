@@ -4,5 +4,4 @@ var Chicken = Meat.extend({
 			this.initWithFile( 'images/m3.png' );
 		},
 
-
 });

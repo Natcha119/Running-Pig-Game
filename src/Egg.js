@@ -4,5 +4,4 @@ var Egg = Meat.extend({
 			this.initWithFile( 'images/m1.png' );
 		},
 		
-
 });

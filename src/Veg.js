@@ -1,4 +1,4 @@
-var Meat = cc.Sprite.extend( {
+var Veg = cc.Sprite.extend( {
 		ctor: function( _pig ) {
 			this._super( );
 			this.pig = _pig;
