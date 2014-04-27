@@ -31,7 +31,10 @@ var GameLayer = cc.LayerColor.extend({
     },
 	
 	update : function( dt ){
-		
+	
+		//set score label 
+		//by this.score
+		this.scoreLabel.setString( score );
 	},
 	
 	onKeyDown: function( e ) {
@@ -47,6 +50,10 @@ var GameLayer = cc.LayerColor.extend({
 
 	onKeyUp : function( e ) {
 		this.pig.setNextDirection( Pig.DIR.STILL );
+	},
+	
+	setScore : function( s ){
+		score = s;
 	},
 	
 	

@@ -1,9 +1,12 @@
-var score = 0;
 var Slide = cc.Node.extend({
 		ctor: function( gameLayer ) {
 			this._super();
 	
 			this.food = null;
+			
+			this.meat = null;
+			
+			this.veg = null;
 	
 			this.gameLayer = gameLayer;
 	
@@ -45,17 +48,36 @@ var Slide = cc.Node.extend({
 			else if(m == 7){
 				this.food = new Eggplant( this.gameLayer.pig );
 			}
+			
+			if(m >= 0 && m <= 3)
+				this.meat = this.food;
+			else
+				this.veg = this.food;
 	
 			this.food.setNewPosition();
 			this.gameLayer.addChild( this.food );
 			this.foodShow.push( this.food );
+			this.setScore();
+			this.gameLayer.setScore( Slide.score );
 			this.food.scheduleUpdate();
 		}, 2);//thing to add to meatShow
 		
 	},
 	
 	update: function( dt ) {
-		
+
 	},	
 	
+	setScore : function(  ){
+		if( this.meat != null && this.veg != null )
+			Slide.score = this.meat.getScore() + this.veg.getScore();
+		else if( this.veg == null )
+			Slide.score = this.meat.getScore();
+		else
+			Slide.score = this.veg.getScore();
+		//Slide.score += s;
+	},
+	 
 });
+
+Slide.score = 0;

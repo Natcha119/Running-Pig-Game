@@ -9,6 +9,8 @@ var Meat = cc.Sprite.extend( {
 			
 			if( this.pig && this.isHit( this.pig ) ) {
 				this.removeFromParent( true );
+				Meat.score += 1;
+				//console.log(Meat.score)
 				//update score
 			}
 			if( pos.y < 0 ) {
@@ -18,17 +20,23 @@ var Meat = cc.Sprite.extend( {
 			}
 		},
 		
-		setNewPosition: function(){
-			this.setPosition(new cc.Point(this.randomX(),800));
+		setNewPosition: function() {
+			this.setPosition( new cc.Point( this.randomX(), 800 ) );
 		},
 		
-		randomX : function(){
+		randomX : function() {
 			var i = Math.floor( Math.random() * 700 ) + 90;
 			return i;
 		},
 		
-		isHit: function( obj ) {
+		isHit : function( obj ) {
 			return cc.rectIntersectsRect( obj.getBoundingBoxToWorld(), this.getBoundingBoxToWorld() );
-		 },
+		},
+		 
+		getScore : function() {
+			return Meat.score;
+		},
 			
 } );
+
+Meat.score = 0;
