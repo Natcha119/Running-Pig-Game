@@ -4,4 +4,7 @@ var Radish = Veg.extend({
 			this.initWithFile( 'images/veg3.png' );
 		},
 
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

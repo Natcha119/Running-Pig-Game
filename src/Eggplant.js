@@ -3,5 +3,8 @@ var Eggplant = Veg.extend({
 			this._super( pig );
 			this.initWithFile( 'images/veg4.png' );
 		},
-
+		
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

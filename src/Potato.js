@@ -3,5 +3,8 @@ var Potato = Veg.extend({
 			this._super( pig );
 			this.initWithFile( 'images/veg1.png' );
 		},
-
+		
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

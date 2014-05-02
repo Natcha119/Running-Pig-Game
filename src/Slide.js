@@ -1,22 +1,18 @@
 var Slide = cc.Node.extend({
 	ctor: function( gameLayer ) {
 			this._super();
-	
-			this.food = null;
-			
-			this.meat = null;
-			
-			this.veg = null;
-			
-			this.pickVeg = 0;
-			
-			this.pickMeat = 0;
-	
-			this.gameLayer = gameLayer;
-
-			this.foodShow = [ ];
-
+			this.initComponent( gameLayer );
 			this.pickUpFood();
+	},
+	
+	initComponent : function( gameLayer ) {
+		this.food = null;
+		this.meat = null;
+		this.veg = null;	
+		this.pickVeg = 0;
+		this.pickMeat = 0;	
+		this.gameLayer = gameLayer;
+		this.foodShow = [ ];
 	},
 	
 	randomFood : function(){
@@ -26,7 +22,18 @@ var Slide = cc.Node.extend({
 	
 	pickUpFood : function(){
 		this.schedule(function(){
-			var m = this.randomFood();
+			this.getFood();
+			this.food.setNewPosition();
+			this.gameLayer.addChild( this.food );
+			this.foodShow.push( this.food );
+			this.changeScore();
+			this.calBarRatio ();			
+			this.food.scheduleUpdate();
+		}, 0.6 );//thing to add to meatShow	
+	},
+	
+	getFood : function() {
+		var m = this.randomFood();
 			if(m == 0){
 				this.food = new Egg( this.gameLayer.pig );
 			}
@@ -56,16 +63,11 @@ var Slide = cc.Node.extend({
 				this.meat = this.food;
 			else
 				this.veg = this.food;
+	},
 	
-			this.food.setNewPosition();
-			this.gameLayer.addChild( this.food );
-			this.foodShow.push( this.food );
-			this.setScore();
-			this.gameLayer.setScore( Slide.score );
-			this.calBarRatio ();			
-			this.food.scheduleUpdate();
-		}, 0.6 );//thing to add to meatShow
-		
+	changeScore : function() {
+		this.setScore();
+		this.gameLayer.setScore( Slide.score );
 	},
 	
 	setScore : function() {
@@ -78,7 +80,9 @@ var Slide = cc.Node.extend({
 	},
 	
 	calBarRatio : function() {
+		if( hitRatio > 0 )
 			this.adjustBarRatio();
+			//else = game over
 	},
 	
 	adjustBarRatio : function() {

@@ -15,6 +15,7 @@ var HealthBar = cc.Node.extend({
 		this.pinkBar.setAnchorPoint( 1, 0 );
 		this.pinkBar.setPosition( new cc.Point( 706, 525 ) );
 		this.addChild( this.pinkBar );
+		
 	},
 	
 	setRatio : function ( ratio ) { // 0 - 2

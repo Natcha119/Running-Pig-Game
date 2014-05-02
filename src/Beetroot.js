@@ -3,5 +3,8 @@ var Beetroot = Veg.extend({
 			this._super( pig );
 			this.initWithFile( 'images/veg2.png' );
 		},
-
+		
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

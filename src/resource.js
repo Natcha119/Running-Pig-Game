@@ -13,6 +13,8 @@ var g_resources = [
 	{src: 'images/blackbar.png' },
 	{src: 'images/greentube.png'},
 	{src: 'images/pinktube.png'},
+	{src: 'images/up.png'},
+	{src: 'images/down.png'},
     //plist
  
     //fnt

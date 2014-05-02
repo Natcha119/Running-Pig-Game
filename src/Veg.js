@@ -10,7 +10,7 @@ var Veg = cc.Sprite.extend( {
 			if( this.pig && this.isHit( this.pig ) ) {
 				this.removeFromParent( true );
 				Veg.score += 1;
-				hitRatio += 0.1;
+				hitRatio += this.getHitRatio();//
 			}
 			if( pos.y < 0 ) {
 				this.removeFromParent( true );
