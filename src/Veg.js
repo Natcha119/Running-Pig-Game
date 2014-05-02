@@ -10,8 +10,7 @@ var Veg = cc.Sprite.extend( {
 			if( this.pig && this.isHit( this.pig ) ) {
 				this.removeFromParent( true );
 				Veg.score += 1;
-				//console.log(Veg.score);
-				//update score
+				hitRatio += 0.1;
 			}
 			if( pos.y < 0 ) {
 				this.removeFromParent( true );
@@ -20,11 +19,11 @@ var Veg = cc.Sprite.extend( {
 			}
 		},
 		
-		setNewPosition: function(){
+		setNewPosition: function() {
 			this.setPosition( new cc.Point(this.randomX(), 800 ) );
 		},
 		
-		randomX : function(){
+		randomX : function() {
 			var i = Math.floor( Math.random() * 700 ) + 90;
 			return i;
 		},
@@ -33,11 +32,9 @@ var Veg = cc.Sprite.extend( {
 			return cc.rectIntersectsRect( obj.getBoundingBoxToWorld(), this.getBoundingBoxToWorld() );
 		 },
 		 
-		getScore : function(){
+		getScore : function() {
 			return Veg.score;
 		},
-		
-		
 			
 } );
 

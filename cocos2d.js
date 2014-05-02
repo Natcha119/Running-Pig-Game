@@ -26,6 +26,7 @@
 			'src/Radish.js',
 			'src/Eggplant.js',
 			'src/Slide.js',
+			'src/HealthBar.js',
             'src/GameLayer.js' ,    //add your own files in order here
         ]
     };

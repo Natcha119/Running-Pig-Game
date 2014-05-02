@@ -1,5 +1,5 @@
 var Slide = cc.Node.extend({
-		ctor: function( gameLayer ) {
+	ctor: function( gameLayer ) {
 			this._super();
 	
 			this.food = null;
@@ -7,11 +7,14 @@ var Slide = cc.Node.extend({
 			this.meat = null;
 			
 			this.veg = null;
+			
+			this.pickVeg = 0;
+			
+			this.pickMeat = 0;
 	
 			this.gameLayer = gameLayer;
-	
-			//this.meatGroup = [ new Egg(), new Chicken(), new Beef(), new Fish() ];	//all items
-			this.foodShow = [];
+
+			this.foodShow = [ ];
 
 			this.pickUpFood();
 	},
@@ -59,25 +62,31 @@ var Slide = cc.Node.extend({
 			this.foodShow.push( this.food );
 			this.setScore();
 			this.gameLayer.setScore( Slide.score );
+			this.calBarRatio ();			
 			this.food.scheduleUpdate();
-		}, 2);//thing to add to meatShow
+		}, 0.6 );//thing to add to meatShow
 		
 	},
 	
-	update: function( dt ) {
-
-	},	
-	
-	setScore : function(  ){
+	setScore : function() {
 		if( this.meat != null && this.veg != null )
 			Slide.score = this.meat.getScore() + this.veg.getScore();
 		else if( this.veg == null )
 			Slide.score = this.meat.getScore();
 		else
 			Slide.score = this.veg.getScore();
-		//Slide.score += s;
+	},
+	
+	calBarRatio : function() {
+			this.adjustBarRatio();
+	},
+	
+	adjustBarRatio : function() {
+		this.gameLayer.healthBar.setRatio( hitRatio );
 	},
 	 
 });
+
+var hitRatio  = 1;
 
 Slide.score = 0;

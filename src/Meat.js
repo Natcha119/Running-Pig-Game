@@ -6,12 +6,10 @@ var Meat = cc.Sprite.extend( {
 		
 		update : function( ) {
 			var pos = this.getPosition();
-			
 			if( this.pig && this.isHit( this.pig ) ) {
 				this.removeFromParent( true );
+				hitRatio -= 0.1;
 				Meat.score += 1;
-				//console.log(Meat.score)
-				//update score
 			}
 			if( pos.y < 0 ) {
 				this.removeFromParent( true );

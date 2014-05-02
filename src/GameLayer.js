@@ -18,12 +18,15 @@ var GameLayer = cc.LayerColor.extend({
 		
 		this.slide = new Slide(this);
 		this.addChild(this.slide);
-		this.slide.scheduleUpdate();
+		//this.slide.scheduleUpdate();
 		
 		this.scoreLabel = cc.LabelTTF.create( '0', 'Arial', 40 );
 		this.scoreLabel.setPosition( new cc.Point( 750, 550 ) );
 		this.addChild( this.scoreLabel );
 		
+		this.healthBar = new HealthBar();
+		this.healthBar.setRatio( 1 );
+		this.addChild( this.healthBar, 1 );
 		this.scheduleUpdate();
 		
         return true;
@@ -31,9 +34,6 @@ var GameLayer = cc.LayerColor.extend({
     },
 	
 	update : function( dt ){
-	
-		//set score label 
-		//by this.score
 		this.scoreLabel.setString( score );
 	},
 	
@@ -55,6 +55,7 @@ var GameLayer = cc.LayerColor.extend({
 	setScore : function( s ){
 		score = s;
 	},
+	
 	
 	
 });
