@@ -1,4 +1,4 @@
-var DecreaseFatSyrup = Meat.extend({
+var DecreaseFatSyrup = Veg.extend({
 		ctor : function( pig ) {
 			this._super( pig );
 			this.initWithFile( 'images/down.png' );

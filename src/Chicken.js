@@ -4,4 +4,7 @@ var Chicken = Meat.extend({
 			this.initWithFile( 'images/m3.png' );
 		},
 
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

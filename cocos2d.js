@@ -28,6 +28,7 @@
 			'src/Slide.js',
 			'src/HealthBar.js',
 			'src/DecreaseFatSyrup.js',
+			'src/IncreaseFatSyrup.js',
             'src/GameLayer.js' ,    //add your own files in order here
         ]
     };

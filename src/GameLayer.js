@@ -18,7 +18,6 @@ var GameLayer = cc.LayerColor.extend({
 		
 		this.slide = new Slide(this);
 		this.addChild(this.slide);
-		//this.slide.scheduleUpdate();
 		
 		this.scoreLabel = cc.LabelTTF.create( '0', 'Arial', 40 );
 		this.scoreLabel.setPosition( new cc.Point( 750, 550 ) );
@@ -56,7 +55,14 @@ var GameLayer = cc.LayerColor.extend({
 		score = s;
 	},
 	
-	
+	gameOver: function(){
+        var conf = confirm("GAME OVER\nYour score : "+ score +"\nRetry?");
+        if( conf ) 
+			location.reload();
+        else 
+			this.unscheduleUpdate();    
+        return;
+    },
 	
 });
 

@@ -4,4 +4,7 @@ var IncreaseFatSyrup = Meat.extend({
 			this.initWithFile( 'images/up.png' );
 		},
 		
+		getHitRatio : function(){
+			return 0.5;
+		},
 });

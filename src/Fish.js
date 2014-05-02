@@ -4,4 +4,7 @@ var Fish = Meat.extend({
 			this.initWithFile( 'images/m5.png' );
 		},
 
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

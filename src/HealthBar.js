@@ -6,10 +6,10 @@ var HealthBar = cc.Node.extend({
 		this.blackBar.setPosition( new cc.Point( 45 , 520 ) );
 		this.addChild( this.blackBar );
 		
-		this.greenBar = cc.Sprite.create( 'images/greentube.png' );
-		this.greenBar.setAnchorPoint( new cc.Point( 0, 0 ) );
-		this.greenBar.setPosition( new cc.Point( 50, 525 ) );
-		this.addChild( this.greenBar );
+		this.blueBar = cc.Sprite.create( 'images/bluetube.png' );
+		this.blueBar.setAnchorPoint( new cc.Point( 0, 0 ) );
+		this.blueBar.setPosition( new cc.Point( 50, 525 ) );
+		this.addChild( this.blueBar );
 		
 		this.pinkBar = cc.Sprite.create( 'images/pinktube.png' );
 		this.pinkBar.setAnchorPoint( 1, 0 );
@@ -19,7 +19,7 @@ var HealthBar = cc.Node.extend({
 	},
 	
 	setRatio : function ( ratio ) { // 0 - 2
-		this.greenBar.setScaleX( ratio ); 
+		this.blueBar.setScaleX( ratio ); 
 		this.pinkBar.setScaleX( 2 - ratio );
 	}
 	

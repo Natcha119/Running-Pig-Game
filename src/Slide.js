@@ -16,7 +16,7 @@ var Slide = cc.Node.extend({
 	},
 	
 	randomFood : function(){
-		var index = Math.floor( Math.random() * 8 );//for random meat
+		var index = Math.floor( Math.random() * 10 );//for random meat
 		return index;
 	},
 	
@@ -34,32 +34,38 @@ var Slide = cc.Node.extend({
 	
 	getFood : function() {
 		var m = this.randomFood();
-			if(m == 0){
+			if( m == 0 ){
 				this.food = new Egg( this.gameLayer.pig );
 			}
-			else if(m == 1){
+			else if( m == 1 ){
 				this.food = new Chicken( this.gameLayer.pig );
 			}
-			else if(m == 2){
+			else if( m == 2 ){
 				this.food = new Beef( this.gameLayer.pig );
 			}
-			else if(m == 3){
+			else if( m == 3 ){
 				this.food = new Fish( this.gameLayer.pig );
 			}
-			else if(m == 4){
-				this.food = new Potato( this.gameLayer.pig );
+			else if( m == 4 ){
+				this.food = new IncreaseFatSyrup( this.gameLayer.pig );
 			}
-			else if(m == 5){
+			else if( m == 5 ){
 				this.food = new Beetroot( this.gameLayer.pig );
 			}
-			else if(m == 6){
+			else if( m == 6 ){
 				this.food = new Radish( this.gameLayer.pig );
 			}
-			else if(m == 7){
+			else if( m == 7 ){
 				this.food = new Eggplant( this.gameLayer.pig );
 			}
+			else if( m == 8 ){
+				this.food = new Potato( this.gameLayer.pig );
+			}
+			else if( m == 9 ){
+				this.food = new DecreaseFatSyrup( this.gameLayer.pig );
+			}
 			
-			if(m >= 0 && m <= 3)
+			if(m >= 0 && m <= 4)
 				this.meat = this.food;
 			else
 				this.veg = this.food;
@@ -82,7 +88,8 @@ var Slide = cc.Node.extend({
 	calBarRatio : function() {
 		if( hitRatio > 0 )
 			this.adjustBarRatio();
-			//else = game over
+		else 
+			this.gameLayer.gameOver();
 	},
 	
 	adjustBarRatio : function() {

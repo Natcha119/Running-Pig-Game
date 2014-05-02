@@ -4,4 +4,7 @@ var Beef = Meat.extend({
 			this.initWithFile( 'images/m4.png' );
 		},
 		
+		getHitRatio : function(){
+			return 0.1;
+		},
 });

@@ -8,8 +8,8 @@ var Meat = cc.Sprite.extend( {
 			var pos = this.getPosition();
 			if( this.pig && this.isHit( this.pig ) ) {
 				this.removeFromParent( true );
-				hitRatio -= 0.1;
 				Meat.score += 1;
+				hitRatio -= this.getHitRatio();
 			}
 			if( pos.y < 0 ) {
 				this.removeFromParent( true );
