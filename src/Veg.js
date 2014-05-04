@@ -24,7 +24,7 @@ var Veg = cc.Sprite.extend( {//blue
 		},
 		
 		randomX : function() {
-			var i = Math.floor( Math.random() * 700 ) + 90;
+			var i = Math.floor( Math.random() * 675 ) + 90;
 			return i;
 		},
 		

@@ -15,18 +15,18 @@ var Pig = cc.Sprite.extend({
     },
 	
 	updatePosition: function() {
-        this.setPosition( cc.p( this.x, 100 ) );
+        this.setPosition( cc.p( this.x, 110 ) );
     },
 	
 	update: function( dt ) {
 		this.direction = this.nextDirection;
 		switch ( this.direction ) {
 			case Pig.DIR.LEFT:
-				if( this.x > 20 )
+				if( this.x > 50 )
 					this.x -= Pig.MOVE_STEP;
 				break;
 			case Pig.DIR.RIGHT:
-				if( this.x < 780 )
+				if( this.x < 750 )
 					this.x += Pig.MOVE_STEP;
 				break;
         }

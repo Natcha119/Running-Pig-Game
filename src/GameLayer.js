@@ -7,7 +7,7 @@ var GameLayer = cc.LayerColor.extend({
 		this.setKeyboardEnabled( true );
 
 		this.pig = new Pig();
-		this.pig.setPosition( new cc.Point( 200,70 ) );
+		//this.pig.setPosition( new cc.Point( 200, 80 ) );
 		this.addChild( this.pig,1 );
 		this.pig.scheduleUpdate();
 		
