@@ -15,6 +15,11 @@ var g_resources = [
 	{src: 'images/pinktube.png'},
 	{src: 'images/up.png'},
 	{src: 'images/down.png'},
+	{src: 'images/thin1.png'},
+	{src: 'images/thin2.png'},
+	{src: 'images/chubby1.png'},
+	{src: 'images/chubby2.png'},
+	
     //plist
  
     //fnt

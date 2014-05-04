@@ -29,6 +29,7 @@
 			'src/HealthBar.js',
 			'src/DecreaseFatSyrup.js',
 			'src/IncreaseFatSyrup.js',
+			'src/Pig2.js',
             'src/GameLayer.js' ,    //add your own files in order here
         ]
     };

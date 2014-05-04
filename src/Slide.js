@@ -27,7 +27,8 @@ var Slide = cc.Node.extend({
 			this.gameLayer.addChild( this.food );
 			this.foodShow.push( this.food );
 			this.changeScore();
-			this.calBarRatio ();			
+			this.calBarRatio ();
+			this.findPigSize();			
 			this.food.scheduleUpdate();
 		}, 0.6 );//thing to add to meatShow	
 	},
@@ -86,7 +87,7 @@ var Slide = cc.Node.extend({
 	},
 	
 	calBarRatio : function() {
-		if( hitRatio > 0 )
+		if( hitRatio > 0 && hitRatio <= 2 )
 			this.adjustBarRatio();
 		else 
 			this.gameLayer.gameOver();
@@ -96,6 +97,19 @@ var Slide = cc.Node.extend({
 		this.gameLayer.healthBar.setRatio( hitRatio );
 	},
 	 
+	findPigSize : function(){ 
+		if( hitRatio >= 0 && hitRatio < 0.2 )
+			this.gameLayer.pig.setPigSize( 1 );
+		else if( hitRatio >= 0.2 && hitRatio < 0.6 )
+			this.gameLayer.pig.setPigSize( 2 );//c1
+		else if( hitRatio >= 0.6 && hitRatio < 1.4 )
+			this.gameLayer.pig.setPigSize( 3 );//normal
+		else if( hitRatio >= 1.4 && hitRatio < 1.8 )
+			this.gameLayer.pig.setPigSize( 4 );//thin1
+		else if( hitRatio >= 1.8 && hitRatio < 2 )
+			this.gameLayer.pig.setPigSize( 5 );//thin2
+	},
+	
 });
 
 var hitRatio  = 1;
