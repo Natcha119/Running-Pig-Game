@@ -2,14 +2,14 @@ var g_resources = [
     //image
     {src: 'images/pig2.png' },
 	{src: 'images/floor3.jpg' },
-	{src: 'images/m1.jpg' },
-	{src: 'images/m3.jpg' },
-	{src: 'images/m4.jpg' },
-	{src: 'images/m5.jpg' },
-	{src: 'images/veg1.jpg' },
-	{src: 'images/veg2.jpg' },
-	{src: 'images/veg3.jpg' },
-	{src: 'images/veg4.jpg' },
+	{src: 'images/m1.png' },
+	{src: 'images/m3.png' },
+	{src: 'images/m4.png' },
+	{src: 'images/m5.png' },
+	{src: 'images/veg1.png' },
+	{src: 'images/veg2.png' },
+	{src: 'images/veg3.png' },
+	{src: 'images/veg4.png' },
 	{src: 'images/blackbar.png' },
 	{src: 'images/bluetube.png'},
 	{src: 'images/pinktube.png'},
@@ -19,6 +19,8 @@ var g_resources = [
 	{src: 'images/thin2.png'},
 	{src: 'images/chubby1.png'},
 	{src: 'images/chubby2.png'},
+	{src: 'images/begin.png'},
+	{src: 'images/gameOver.png'},
 	
     //plist
  
@@ -29,4 +31,9 @@ var g_resources = [
     //bgm
  
     //effect
+	{src: 'sound/chubby1.mp3'},
+	{src: 'sound/chubby2.mp3'},
+	{src: 'sound/normal.mp3'},
+	{src: 'sound/thin1.mp3'},
+	{src: 'sound/thin2.mp3'},
 ];

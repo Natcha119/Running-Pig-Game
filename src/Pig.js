@@ -7,6 +7,7 @@ var Pig = cc.Sprite.extend({
 		this.nextDirection = Pig.DIR.STILL;
 		
 		this.x = 400;
+		this.size = 3;
 		this.updatePosition();
 	},
 	
@@ -34,8 +35,9 @@ var Pig = cc.Sprite.extend({
 	},
 	
 	setPigSize : function( size ){
+		this.size = size;
 		if( size == 1 ) {
-			this.initWithFile( 'images/chubby2.png', cc.rect( 0, 0, 201, 210 ) );//c2
+				this.initWithFile( 'images/chubby2.png', cc.rect( 0, 0, 201, 210 ) );//c2
 		}
 		else if( size == 2 ) {
 			this.initWithFile( 'images/chubby1.png', cc.rect( 0, 0, 155, 189 )  );//c1
@@ -49,6 +51,19 @@ var Pig = cc.Sprite.extend({
 		else if( size == 5 ) {
 			this.initWithFile( 'images/thin2.png', cc.rect( 0, 0, 90, 150 ) );//thin2
 		}
+	},
+	
+	beep : function( ) {
+		if( this.size == 1 )
+			cc.AudioEngine.getInstance().playEffect( 'sound/chubby2.mp3' );
+		else if( this.size == 2 )
+			cc.AudioEngine.getInstance().playEffect( 'sound/chubby1.mp3' );
+		else if( this.size == 3 )
+			cc.AudioEngine.getInstance().playEffect( 'sound/normal.mp3' );
+		else if( this.size == 4 )
+			cc.AudioEngine.getInstance().playEffect( 'sound/thin1.mp3' );
+		else if( this.size == 5 )
+			cc.AudioEngine.getInstance().playEffect( 'sound/thin2.mp3' );
 	},
 });
 
