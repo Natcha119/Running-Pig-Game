@@ -1,12 +1,9 @@
 
 var GameLayer = cc.LayerColor.extend({
     init: function() {
-
         this._super( new cc.Color4B( 127, 127, 127, 255 ) );
         this.setPosition( new cc.Point( 0, 0 ) );
 		this.score = 0;
-		// this.iden = Math.random();
-		// console.log(this.iden);
 		this.setKeyboardEnabled( true );
 		this.createPig();
 		this.createBackground();
@@ -18,8 +15,7 @@ var GameLayer = cc.LayerColor.extend({
         this.setTouchMode(1);
         this.isDead = false;
 	
-        return true;
-		
+        return true;	
     },
 
     createHealthbar : function(){
@@ -36,20 +32,20 @@ var GameLayer = cc.LayerColor.extend({
     },
 
     createSlide : function(){
-    	this.slide = new Slide(this);
-		this.addChild(this.slide);
+    	this.slide = new Slide( this );
+		this.addChild( this.slide );
     },
 
     createBackground : function(){
     	this.background = new Background();
-		this.background.setPosition( new cc.Point( 0,0 ) );
+		this.background.setPosition( new cc.Point( 0, 0 ) );
 		this.addChild( this.background );
 		this.background.scheduleUpdate();
     },
 	
 	createPig: function(){
 		this.pig = new Pig();
-		this.addChild( this.pig,1 );
+		this.addChild( this.pig, 1 );
 		this.pig.scheduleUpdate();
 	},
 	
@@ -77,13 +73,6 @@ var GameLayer = cc.LayerColor.extend({
 	},
 	
 	gameOver: function(){
-        //var conf = confirm("GAME OVER\nYour score : "+ score +"\nRetry?");
-        //if( conf ) 
-		//	location.reload();
-        //else 
-		//	this.unscheduleUpdate();    
-        //return;
-		
 		this.gameover = cc.Sprite.create("images/gameOver.png");
        	this.gameover.setPosition( 400, 300 );
         this.addChild( this.gameover, 3 );
@@ -92,8 +81,6 @@ var GameLayer = cc.LayerColor.extend({
         this.pig.cleanup();
         this.slide.cleanup();
         this.isDead = true;
-
-        
     },
 
     onTouchBegan:function( touch, event ) {

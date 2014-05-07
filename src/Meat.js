@@ -26,7 +26,7 @@ var Meat = cc.Sprite.extend( {
 		},
 		
 		randomX : function() {
-			var i = Math.floor( Math.random() * 675 ) + 90;
+			var i = Math.floor( Math.random()*675 ) + 90;
 			return i;
 		},
 		

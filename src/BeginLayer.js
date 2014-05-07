@@ -12,7 +12,7 @@ var BeginLayer = cc.Layer.extend({
         var winsize = director.getWinSize();
         var center = cc.p( 400, 300 );
        
-        var bg = cc.Sprite.create("images/begin.png");
+        var bg = cc.Sprite.create( "images/begin.png" );
         bg.setPosition( center );
         this.addChild( bg );
 
@@ -25,7 +25,7 @@ var BeginLayer = cc.Layer.extend({
 
 	onTouchBegan:function( touch, event ) {
         var director = cc.Director.getInstance();
-        director.replaceScene(cc.TransitionFade.create(1.5, new StartScene()));
+        director.replaceScene( cc.TransitionFade.create( 1.5, new StartScene() ) );
     }
 });
 

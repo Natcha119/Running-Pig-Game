@@ -13,7 +13,7 @@ var Veg = cc.Sprite.extend( {//blue
 				this.pig.beep();
 				this.removeFromParent( true );
 				Veg.score += 1;
-				hitRatio += this.getHitRatio();//			
+				hitRatio += this.getHitRatio();		
 			}
 			if( pos.y < 0 ) {
 				this.removeFromParent( true );
@@ -23,11 +23,11 @@ var Veg = cc.Sprite.extend( {//blue
 		},
 		
 		setNewPosition: function() {
-			this.setPosition( new cc.Point(this.randomX(), 800 ) );
+			this.setPosition( new cc.Point( this.randomX(), 800 ) );
 		},
 		
 		randomX : function() {
-			var i = Math.floor( Math.random() * 675 ) + 90;
+			var i = Math.floor( Math.random()*675 ) + 90;
 			return i;
 		},
 		
