@@ -16,12 +16,12 @@ var BeginLayer = cc.Layer.extend({
         bg.setPosition( center );
         this.addChild( bg );
 
-        //this.playSound();
+        this.playSound();
 	},
 
-	//playSound: function(){
-	//	cc.AudioEngine.getInstance().playMusic( 'effects/start_background_sound.mp3', true );
-	//},
+	playSound: function(){
+		cc.AudioEngine.getInstance().playMusic( 'sound/bit.mp3', true );
+	},
 
 	onTouchBegan:function( touch, event ) {
         var director = cc.Director.getInstance();

@@ -81,7 +81,12 @@ var GameLayer = cc.LayerColor.extend({
         this.pig.cleanup();
         this.slide.cleanup();
         this.isDead = true;
+        this.playSound();
     },
+
+    playSound: function(){
+		cc.AudioEngine.getInstance().playMusic( 'sound/Coming.mp3', true );
+	},
 
     onTouchBegan:function( touch, event ) {
     	if(this.isDead){

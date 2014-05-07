@@ -36,4 +36,6 @@ var g_resources = [
 	{src: 'sound/normal.mp3'},
 	{src: 'sound/thin1.mp3'},
 	{src: 'sound/thin2.mp3'},
+	{src: 'sound/Coming.mp3'},
+	{src: 'sound/bit.mp3'},
 ];
