@@ -31,7 +31,7 @@ var GameLayer = cc.LayerColor.extend({
 
     createScorelabel : function(){
     	this.scoreLabel = cc.LabelTTF.create( '0', 'Arial', 40 );
-		this.scoreLabel.setPosition( new cc.Point( 750, 550 ) );
+		this.scoreLabel.setPosition( new cc.Point( 760, 550 ) );
 		this.addChild( this.scoreLabel );
     },
 
@@ -98,11 +98,8 @@ var GameLayer = cc.LayerColor.extend({
 
     onTouchBegan:function( touch, event ) {
     	if(this.isDead){
-    		console.log("ppppp");
         	var director = cc.Director.getInstance();
-        	//this.gameover.removeFromParent(true);
         	location.reload();
-        	//director.replaceScene(cc.TransitionFade.create(1.5, new BeginScene()));
         }
     }
 	

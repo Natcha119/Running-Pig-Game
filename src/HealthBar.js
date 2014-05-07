@@ -1,6 +1,15 @@
 var HealthBar = cc.Node.extend({
 	ctor: function(  ) {
 		this._super();
+		
+		this.veggy = cc.Sprite.create( 'images/vegveg.png' );
+		this.veggy.setPosition( new cc.Point( 45, 550 ) );
+		this.addChild( this.veggy, 1 );
+		
+		this.mmeat = cc.Sprite.create( 'images/meatCut.png' );
+		this.mmeat.setPosition( new cc.Point( 690, 550 ) );
+		this.addChild( this.mmeat, 1 );
+		
 		this.blackBar = cc.Sprite.create( 'images/blackbar.png' );
 		this.blackBar.setAnchorPoint( new cc.Point( 0, 0 ) );
 		this.blackBar.setPosition( new cc.Point( 45 , 520 ) );
