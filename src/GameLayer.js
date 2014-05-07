@@ -5,8 +5,8 @@ var GameLayer = cc.LayerColor.extend({
         this._super( new cc.Color4B( 127, 127, 127, 255 ) );
         this.setPosition( new cc.Point( 0, 0 ) );
 		this.score = 0;
-		this.iden = Math.random();
-		console.log(this.iden);
+		// this.iden = Math.random();
+		// console.log(this.iden);
 		this.setKeyboardEnabled( true );
 		this.createPig();
 		this.createBackground();

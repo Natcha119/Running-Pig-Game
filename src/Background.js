@@ -14,10 +14,10 @@ var Background = cc.Node.extend({
 		update: function( dt ) {
  
 			if ( this.background1.getPositionY() < -400 ) {
-				this.background1.setPosition( new cc.Point( 400, this.background2.getPositionY()+800 ) );
+				this.background1.setPosition( new cc.Point( 400, this.background2.getPositionY() + 800 ) );
 			} 
 			else if( this.background2.getPositionY() < -400 ) {
-				this.background2.setPosition( new cc.Point( 400, this.background1.getPositionY()+800 ) );
+				this.background2.setPosition( new cc.Point( 400, this.background1.getPositionY() + 800 ) );
 			}
 			
 			this.slideBackground();

@@ -2,6 +2,8 @@ var Veg = cc.Sprite.extend( {//blue
 		ctor: function( _pig ) {
 			this._super( );
 			this.pig = _pig;
+			this.speeds = [ 6, 8, 10, 9, 12 ];
+			this.speed = this.randomSpeed();
 		},
 		
 		update : function( ) {
@@ -16,7 +18,7 @@ var Veg = cc.Sprite.extend( {//blue
 			if( pos.y < 0 ) {
 				this.removeFromParent( true );
 			} else {
-				this.setPosition( pos.x, pos.y - 4 );
+				this.setPosition( pos.x, pos.y - this.speed );
 			}
 		},
 		
@@ -35,6 +37,11 @@ var Veg = cc.Sprite.extend( {//blue
 		 
 		getScore : function() {
 			return Veg.score;
+		},
+
+		randomSpeed : function() {
+			var i = Math.floor( Math.random()*5 );
+			return this.speeds[ i ];
 		},
 			
 } );
